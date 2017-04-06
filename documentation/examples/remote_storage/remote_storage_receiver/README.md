@@ -1,12 +1,12 @@
-# Remote storage bridge
+# Remote storage receiver
 
-This is a bridge that receives samples via Prometheus's remote write
+This is a receiver that receives samples via Prometheus's remote write
 protocol and stores them in Graphite, InfluxDB, or OpenTSDB. It is meant
 as a replacement for the built-in specific remote storage implementations
 that have been removed from Prometheus.
 
-For InfluxDB, this bridge also supports reading back data through
-Prometheus via Prometheus's remote read protocol.
+For InfluxDB, this binary is also an adapter that supports reading back data
+through Prometheus via Prometheus's remote read protocol.
 
 ## Building
 
@@ -42,7 +42,7 @@ To show all flags:
 
 ## Configuring Prometheus
 
-To configure Prometheus to send samples to this bridge, add the following to your `prometheus.yml`:
+To configure Prometheus to send samples to this binary, add the following to your `prometheus.yml`:
 
 ```yaml
 # Remote write configuration (for Graphite, OpenTSDB, or InfluxDB).
